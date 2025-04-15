@@ -2,6 +2,7 @@ import React from "react";
 
 import { CarData } from "../../Cardata/Data.jsx";
 import Card from "../../component/card.jsx";
+import Navbar from "../../layout/Navbar.jsx";
 
 
 
@@ -9,6 +10,7 @@ import Card from "../../component/card.jsx";
 function HomePage() {
   return (
     <div>
+     
       
          <div className="card-container"> 
         { CarData && CarData.map((item) => (

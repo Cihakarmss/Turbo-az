@@ -1,61 +1,198 @@
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 30px;
-    margin: 0 300px;
-    
-    
-    
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 0 300px;
+}
+
+.card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.product {
+  width: 1000px;
+  height: 900px;
+  margin: 30px auto;
+  padding: 20px;
   
-  .card {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
   
-  .card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .card img {
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .card-content h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .card-content p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  /* İstəyə bağlı əlavə elementlər üçün */
-  .favorite-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  }
-  
+  font-family: Arial, sans-serif;
+}
+
+.product_header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.card2 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 320px;
+}
+
+.product_side1 {
+  grid: 1 1 65%;
+  width: 500px;
+}
+
+.product_img {
+  width: 800px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 11px;
+  margin-bottom: 25px;
+}
+
+.product-content p {
+  font-size: 22px;
+  margin: 24px 0;
+  color: #444;
+}
+
+.product-content span {
+  font-weight: bold;
+  color: #222;
+}
+
+.product_side2 {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.product-price {
+  font-size: 34px;
+  font-weight: bold;
+  color: #010801;
+}
+
+.product_region {
+  font-size: 26px;
+  color: #555;
+}
+
+.phone-number {
+  margin-top: 30px;
+  width: 300px;
+  height: 173px;
+  background-color: #07f717;
+  color: white; 
+  padding: 16px 25px;
+  border: none;
+  border-radius:12px;
+  cursor: pointer;
+  font-size: 22px;
+  transition: background-color 0.3s ease;
+}
+
+.phone-number:hover {
+  background-color: #00963b;
+}
+
+.phone-number span {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.navbar {
+  background-color: #ed1c24; 
+  padding: 12px 20px;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  margin-bottom: 30px;
+ 
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 77px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 300px
+}
+
+.navbar a,
+.navbar .navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.navbar a:hover {
+  color: #ffe3e3;
+}
+
+.add_btn{
+  background-color: #00963b;
+  color: #fff;
+  margin: 0 0 0 144px;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.add_btn:hover{
+  background-color: #046229;
+}
+
+

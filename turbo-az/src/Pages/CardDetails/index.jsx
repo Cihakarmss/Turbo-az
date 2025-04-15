@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { CarData } from "../../Cardata/Data";
 import Card2 from "../../component/Card2.jsx";
 
+
+
 function CardDetails() {
   const { id } = useParams();
   return (
@@ -22,6 +24,8 @@ function CardDetails() {
                   year={item.year}
                   millage={item.mileage}
                   engine={item.engine}
+                  city={item.city}
+                  phone={item.phone}
                 />
               );
             }
