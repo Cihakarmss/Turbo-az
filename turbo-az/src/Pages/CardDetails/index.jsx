@@ -1,9 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 import { CarData } from "../../Cardata/Data";
-import Card2 from "../../component/Card2.jsx";
-
-
+import Product from "../../component/Product.jsx";
 
 function CardDetails() {
   const { id } = useParams();
@@ -14,7 +12,7 @@ function CardDetails() {
           CarData.map((item) => {
             if (item.id == id) {
               return (
-                <Card2
+                <Product
                   key={item.id}
                   img={item.img}
                   title={item.brand}
