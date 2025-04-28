@@ -14,7 +14,7 @@ function Navbar() {
         <a href="#">Moto</a>
         <a href="#">Ehtiyat hissələr və aksesuarlar</a>
         <a href="#">İcarə</a>
-        <button className="add_btn">+ Yeni elan</button>
+        <Link className="add_btn" to="/forum">Yeni elan</Link>
       </div>
     </nav>
   );

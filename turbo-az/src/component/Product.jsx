@@ -1,8 +1,18 @@
 import React from "react";
 
 function Product(props) {
-  const { title,phone, price, year, model, engine, img, currency, millage, city } =
-    props;
+  const {
+    title,
+    phone,
+    price,
+    year,
+    model,
+    engine,
+    img,
+    currency,
+    millage,
+    city,
+  } = props;
   return (
     <div>
       <div className="product">
@@ -18,7 +28,7 @@ function Product(props) {
             </span>
             <div className="product-content">
               <p>
-                <span>Seher:</span> Seher:{city}
+                <span>Seher:</span> {city}
               </p>
               <p>
                 <span>Marka:</span>
@@ -43,12 +53,16 @@ function Product(props) {
             </div>
           </div>
           <div className="product_side2">
-            <div className="product-price">{price}  {currency}</div>
-              <div className="product_region">{city}</div>
-              <button className="phone-number">
-                <p><span>nomreni goster:</span>{phone}</p>
-              </button>
-            
+            <div className="product-price">
+              {price} {currency}
+            </div>
+            <div className="product_region">{city}</div>
+            <button className="phone-number">
+              <p>
+                <span>nomreni goster:</span>
+                {phone}
+              </p>
+            </button>
           </div>
         </div>
       </div>
