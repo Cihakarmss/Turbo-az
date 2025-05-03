@@ -8,13 +8,13 @@ function Navbar() {
         <Link className="navbar-brand" to="/">
           Turbo.az
         </Link>
-        <a href="#">Bütün elanlar</a>
+        <Link className="FavoritesBtn" to="/favorites">Favorites</Link>
         <a href="#">Dilerlər</a>
         <a href="#">Avtokataloq</a>
         <a href="#">Moto</a>
         <a href="#">Ehtiyat hissələr və aksesuarlar</a>
         <a href="#">İcarə</a>
-        <Link className="add_btn" to="/forum">Yeni elan</Link>
+        <Link className="add_btn" to={"/creatforum"}>Yeni elan</Link>
       </div>
     </nav>
   );

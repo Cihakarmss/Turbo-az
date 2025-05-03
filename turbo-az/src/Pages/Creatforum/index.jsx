@@ -1,15 +1,25 @@
 import React from "react";
-import Checkbox from "../../ForumComponent/Checkbox";
-import Register from "../../ForumComponent/Register";
+import Select from "../../ForumComponent/Select";
+import { Controller, useForm } from "react-hook-form";
 
+
+const { control, handleSubmit } = useForm;
+
+const onsubmit = (data) => {
+  console.log(data);
+};
 
 function Creatforum() {
   return (
-    <>
+    <form onsubmit={handleSubmit(onsubmit)}>
       <h1>Form Page</h1>
-      <Checkbox/>
-      <Register/>
-    </>
+      <Select 
+        name="marka"
+        label="Marka Seçin"
+        control={control}
+        option={["BMW", "Mercedes", "Audi"]}
+      />
+    </form>
   );
 }
 

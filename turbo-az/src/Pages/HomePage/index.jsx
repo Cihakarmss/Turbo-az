@@ -2,12 +2,12 @@ import React from "react";
 
 import { CarData } from "../../Cardata/Data.jsx";
 import Card from "../../component/card.jsx";
-import Navbar from "../../layout/Navbar.jsx";
 
 
 
 
-function HomePage() {
+
+function homePage() {
   return (
     <div>
      
@@ -36,4 +36,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default homePage;
