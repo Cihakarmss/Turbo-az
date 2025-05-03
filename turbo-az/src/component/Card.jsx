@@ -7,7 +7,7 @@ function Card(props) {
   const addtoFavorite = () => {
     const favoriteItems = JSON.parse(localStorage.getItem("favoriteItems")) || [];
     const newItem = {
-     
+      id: props.id,
       title: title,
       price: price,
       year: year,

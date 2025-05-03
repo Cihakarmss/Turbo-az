@@ -7,7 +7,10 @@ function Favoritezone() {
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem("favoriteItems")) || [];
     setFavorites(storedItems);
-  }, []);
+
+  }, [])
+
+  
 
   const removeProduct = (id) => {
     const updatedItems = favorites.filter((item) => item.id !== id);
@@ -16,6 +19,8 @@ function Favoritezone() {
 
     localStorage.setItem("favoriteItems", JSON.stringify(updatedItems));
   };
+
+
   return (
     <>
       <div className="favorite_header">
@@ -26,7 +31,7 @@ function Favoritezone() {
         <div className="favorite_header"></div>
 
         <div className="favorite_card">
-          {JSON.parse(localStorage.getItem("favoriteItems")).map((item) => (
+          {favorites.map((item) => (
             <div key={item.id} className="favorite_card_item">
               <img src={item.img} alt="car_image" />
               <h3>
