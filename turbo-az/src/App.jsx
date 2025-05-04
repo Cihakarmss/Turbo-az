@@ -2,10 +2,10 @@ import React from "react";
 
 import "./App.css";
 import HomePage from "./Pages/HomePage";
-import {BrowserRouter as Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Carddetails from "./Pages/CardDetails";
 import Layout from "./layout/Layout";
-import Favoritezone from "./Pages/Favoritezone";
+import Favoritezone from "./Pages/Favoritezone.jsx/index.jsx";
 import FormPAge from "./Pages/FormPage/index.jsx";
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>
-    
   );
 }
 
