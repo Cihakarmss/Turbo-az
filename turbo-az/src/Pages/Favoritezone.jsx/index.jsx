@@ -2,15 +2,24 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromFavorites } from "../../features/favorites/favoritesSlice";
 
+
+
 function Favoritezone() {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
 
+
   console.log(favorites);
 
   return (
-    <div>
+    
+    <div className="card-container"> 
+    <div className="favorite-zone">
+      <div className="header-favorite">
+
       <h1>Favorite Zone</h1>
+      </div>
+      
       <div className="favorite-cards">
         {favorites &&
           favorites.map((item) => (
@@ -28,12 +37,18 @@ function Favoritezone() {
                 className="favorite-btn"
                 onClick={() => dispatch(removeFromFavorites(item.id))}
               >
-                ♥Remove from Favorite
+                Remove from Favorite
               </button>
             </div>
+            
+            
+            
           ))}
+          <button className="exit-favorite" onClick={() => window.location.href = "/"}>Exit</button>
       </div>
     </div>
+    </div>
+
   );
 }
 
