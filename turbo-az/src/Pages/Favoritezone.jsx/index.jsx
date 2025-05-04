@@ -1,57 +1,36 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFavorite } from "../features/favorites/favoriteSlice"; 
 
 function Favoritezone() {
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem("favoriteItems")) || [];
-    setFavorites(storedItems);
-
-  }, [])
-
-  
-
-  const removeProduct = (id) => {
-    const updatedItems = favorites.filter((item) => item.id !== id);
-
-    setFavorites(updatedItems);
-
-    localStorage.setItem("favoriteItems", JSON.stringify(updatedItems));
-  };
-
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.items); 
 
   return (
-    <>
-      <div className="favorite_header">
-        <h1>Favorite</h1>
+    <div>
+      <h1>Favorite Zone</h1>
+      <div className="favorite-cards">
+        {favorites.map((item) => (
+          <div key={item.id} className="card">
+            <img src={item.img} alt={item.title} />
+            <h3>{item.title}</h3>
+            <p>{item.model}</p>
+            <p>
+              {item.price} {item.currency}
+            </p>
+            <p>
+              {item.year}, {item.engine}, {item.millage}
+            </p>
+            <button
+              className="favorite-btn"
+              onClick={() => dispatch(removeFavorite(item.id))}
+            >
+              ♥Remove from Favorite
+            </button>
+          </div>
+        ))}
       </div>
-
-      <div className="favorite">
-        <div className="favorite_header"></div>
-
-        <div className="favorite_card">
-          {favorites.map((item) => (
-            <div key={item.id} className="favorite_card_item">
-              <img src={item.img} alt="car_image" />
-              <h3>
-                {item.price} {item.currency}
-              </h3>
-              <p>
-                {item.title} {item.model}
-              </p>
-              <p>
-                {item.year}, {item.engine}, {item.millage}
-              </p>
-              <button
-                onClick={() => removeProduct(item.id)}
-                className="remove_button"
-              ></button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
+    </div>
   );
 }
 

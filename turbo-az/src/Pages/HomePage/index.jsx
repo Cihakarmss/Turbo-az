@@ -8,6 +8,8 @@ import Card from "../../component/card.jsx";
 
 
 function homePage() {
+  
+
   return (
     <div>
      

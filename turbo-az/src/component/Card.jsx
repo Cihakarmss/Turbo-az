@@ -1,28 +1,37 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import { addToFavorites, removeFromFavorites } from "../features/favorites/favoritesSlice";
+
+import { useDispatch, useSelector } from "react-redux";
 
 function Card(props) {
   const { title, price, year, model, engine, img, currency, millage } = props;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const favoriteItems = useSelector((state) => state.favorite.favourites);
+   const isFavorite = favoriteItems.some((fav) => fav.id === props.id);
   const addtoFavorite = () => {
-    const favoriteItems = JSON.parse(localStorage.getItem("favoriteItems")) || [];
-    const newItem = {
-      id: props.id,
-      title: title,
-      price: price,
-      year: year,
-      model: model,
-      engine: engine,
-      img: img,
-      currency: currency,
-      millage: millage,
-    };
-    favoriteItems.push(newItem);
-    localStorage.setItem("favoriteItems", JSON.stringify(favoriteItems));
-    alert("Added to favorites!");
-    
-  }
+    if (isFavorite) {
+      dispatch(removeFromFavorites({ id: props.id }));
+    } else {
+      dispatch(
+        addToFavorites({
+          id: props.id,
+          img: img,
+          title: title,
+          model: model,
+          price: price,
+          currency: currency,
+          year: year,
+          millage: millage,
+          engine: engine,
+        })
+      );
+    }
 
+
+  }
+  
 
   return (
     <>
@@ -43,12 +52,14 @@ function Card(props) {
       <div/>
       </div>
   <button className="favorite-btn" onClick={addtoFavorite}>
-        ♥ Add to Favorite
+        Add to Favorite
       </button>
     </div>
     </>    
         
   );
 }
+
+
 
 export default Card;
