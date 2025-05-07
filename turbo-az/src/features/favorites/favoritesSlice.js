@@ -14,11 +14,7 @@ const favoritesSlice = createSlice({
       if (!existingItem) {
         state.favorites.push(action.payload);
       }
-      else {
-        state.favorites = state.favorites.filter(
-          (item) => item.id !== action.payload.id
-        );
-      }
+      
     },
     removeFromFavorites: (state, action) => {
       state.favorites = state.favorites.filter(
